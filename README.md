@@ -12,11 +12,17 @@ Code and scripts for reproducing the figures in this study.
 
 
 - Figure Supplementary 2/ ( Plots PPC & Granger for facial expressions + voluntary movements)
-Requirements
+
+## Requirements
 MATLAB R2023a ( or later)
+
+
 Toolbox: Signal Processing + FieldTrip (https://www.fieldtriptoolbox.org/)
-How to Use
+## How to Use
 Each figure folder contains:
 
+
 'readme.txt' - instructions for that figure
+
+
 '.m' files - MATLAB scripts for analysis and plotting
