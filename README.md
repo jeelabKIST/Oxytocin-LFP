@@ -4,7 +4,7 @@ Code for reproducing figures in: Oxytocin selectively biases sensory-prefrontal 
 
 Code and scripts for reproducing the figures in this study.
 
-Repository structure
+# Repository structure
 ## Figure 1
 - Event-related potentials
 ## Figure 2
