@@ -5,6 +5,7 @@ Code and scripts for reproducing the figures in this study.
 
 Repository structure
 ### Figure 1
+- Event-related potentials
 ### Figure 2
 ( Functional connectivity, eLFPs)
 ### Figure 3
