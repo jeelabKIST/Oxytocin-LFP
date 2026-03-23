@@ -4,6 +4,8 @@ Neural Synchrony Links Sensorimotor Cortices in a Network for Facial Motor Contr
 Code and scripts for reproducing the figures in this study.
 
 Repository structure
+## Figure 1
+
 Figure 2
 ( Functional connectivity, eLFPs)
 Figure 3
