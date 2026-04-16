@@ -9,7 +9,7 @@ Code and scripts for reproducing the figures in this study.
 - Figure 3 ( PLV & Granger analysis )
 - Figure 4 ( State-space analysis )
 
-
+## Supplementary figures
 - Figure Supplementary 1 ( Time-course ERP modulation & Peak amplitude comparison )
 - Figure Supplementary 2 ( Power spectrograms )
 - Figure Supplementary 3 ( Frequency-resolved & band-specific Granger Causality )
@@ -26,3 +26,7 @@ Each figure folder contains:
 'readme.txt' - instructions for that figure
 
 '.m' files - MATLAB scripts for analysis and plotting
+
+## Data availability
+The full processed electrophysiological dataset is available on figshare.
+Only example datasets required for testing the code pipeline are included in this repository.
