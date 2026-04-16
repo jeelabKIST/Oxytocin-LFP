@@ -1,7 +1,9 @@
 # oxytocin-lfp-code
-Code for reproducing figures in: Oxytocin selectively biases sensory-prefrontal communication through network-level suppression and theta coupling
+MATLAB Code for reproducing all main and supplementary figures from:
+Oxytocin selectively biases sensory-prefrontal communication through network-level suppression and theta coupling
 
-Code and scripts for reproducing the figures in this study.
+The full dataset is publicly available on figshare:
+[DOI]
 
 ## Repository structure
 - Figure 1 ( Event-related potentials, ASSR )
