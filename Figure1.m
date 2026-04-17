@@ -2,7 +2,7 @@ clear; clc; close all;
 addpath Figure1/
 %% Load data
 load('ERP.mat');
-load('meta.mat', 'meta');
+load('meta.mat');
 
 conds_to_analyze   = [1 2 3 4];    % Pup calls conditions
 exclude_sessions   = [25, 39, 55, 56, 57, 58,59, 60, 67,68, 69,70]; % outlier sessions
