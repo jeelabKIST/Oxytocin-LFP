@@ -1,7 +1,6 @@
 clear; clc; close all;
 
-% 1. 파라미터 및 데이터 로드
-% --- 설정 ---
+
 data_file   = './data/ERP_all_temporal.mat';
 meta_file   = './data/meta_20251011.mat';
 info_file   = './data/final_0428a-trialInfo.mat';
@@ -11,7 +10,7 @@ conds_to_analyze = [1 2 3 4];
 n_mean      = 10;          % 블록당 트라이얼 수
 srate_onset = 300000;      
 
-% --- 로드 ---
+
 fprintf('Loading data...\n');
 load(data_file, 'ERP_all', 'drug', 'times', 'srate', 'chan_names');
 load(meta_file, 'meta');
@@ -22,7 +21,7 @@ trial_list_universal = single(trialInfo.trial_list(:));
 trial_onset_universal = single(trialInfo.trial_onset(:));
 pup_indices = find(ismember(trial_list_universal', conds_to_analyze));
 
-% 2. 그룹별 세션 정의
+
 n_total = size(ERP_all, 4);
 valid_mask = true(1, n_total);
 valid_mask(exclude_sessions) = false;
@@ -86,8 +85,7 @@ end
 %% 8. Peak Amplitude Tracking (Mean of Window)
 fprintf('Tracking Window-Mean Amplitude over time...\n');
 
-% --- 설정 ---
-% 박사님 피드백 반영: 특정 윈도우 내의 '평균' 진폭을 추적
+
 peak_windows = {[0.005 0.035], [0.005 0.035], [0.005 0.035]}; 
 stat_alpha   = 0.05;
 
@@ -136,7 +134,7 @@ for i = 1:3
         end
         group_data{g} = subj_block_peaks;
 
-        % 평균 및 SEM 플롯
+
         m_vals = mean(subj_block_peaks, 1, 'omitnan');
         s_vals = std(subj_block_peaks, 0, 1, 'omitnan') ./ sqrt(n_subj);
         lineProps = {'Color', groups(g).color, 'LineWidth', 1.5};
@@ -145,19 +143,19 @@ for i = 1:3
             h_sh = shadedErrorBar(block_times_min, m_vals, s_vals, lineProps, 1);
             h_line(g) = h_sh.mainLine;
 
-            % ✅ [에러 수정] all() 함수를 사용하여 스칼라 논리값 보장
+
             if isfield(h_sh, 'patch') && all(isgraphics(h_sh.patch))
                 set(h_sh.patch, 'EdgeColor', 'none', 'FaceAlpha', 0.2); 
             end
             if isfield(h_sh, 'edge') && all(isgraphics(h_sh.edge))
-                set(h_sh.edge, 'Visible', 'off'); % 테두리 제거
+                set(h_sh.edge, 'Visible', 'off'); 
             end
         else
             h_line(g) = plot(block_times_min, m_vals, 'Color', groups(g).color, 'LineWidth', 1.5);
         end
     end
 
-    % --- 블록별 통계 (가로 라인 표시) ---
+
     n_blocks = length(block_times_min);
     sig_blocks = false(1, n_blocks);
     for b = 1:n_blocks
@@ -168,7 +166,7 @@ for i = 1:3
         end
     end
 
-    % --- 스타일 및 유의성 라인 ---
+    
     title(sprintf('%s (%.0f-%.0f ms Mean)', chan_names{ch_idx}, win(1)*1000, win(2)*1000));
     xlabel('Time from injection (min)');
     if i == 1, ylabel('Mean Amplitude (\muV)'); end
@@ -178,7 +176,7 @@ for i = 1:3
 
     if i == 1, ylim([-140 20]); else, ylim([-80 20]); end
     
-    % 유의 블록 가로 라인 추가 (Y축 최상단 부근)
+    
     y_limits = get(gca, 'YLim');
     line_y = y_limits(1) * 0.92; 
     sig_idx = find(sig_blocks);
