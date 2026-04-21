@@ -1,5 +1,4 @@
 %% =========================================
-% Old-style time-resolved 5-panel plot
 % aligned to injection end
 %
 % Panels:
@@ -405,5 +404,3 @@ for p = 1:5
     % ylim([0, max_val*1.5]);
     title('5–20 min', 'FontSize',8, 'FontWeight','normal');
 end
-
-% sgtitle('Old-style time-resolved low-\theta analysis', 'FontWeight','bold');
