@@ -30,5 +30,4 @@ MATLAB R2024b (or later)
 '.m' files - MATLAB scripts for analysis and plotting
 
 ## Data availability
-The full processed electrophysiological dataset is available on figshare.
-Only example datasets required for testing the code pipeline are included in this repository.
+The full electrophysiological dataset is available on figshare.
