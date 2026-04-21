@@ -25,8 +25,6 @@ Data are currently stored in a private Figshare repository and will be made publ
 MATLAB R2024b (or later)
 
 ## How to Use
-Each figure folder contains:
-
 'readme.txt' - instructions for that figure
 
 '.m' files - MATLAB scripts for analysis and plotting
